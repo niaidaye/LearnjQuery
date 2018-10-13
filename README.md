@@ -23,6 +23,7 @@
         设置属性
     }
 ```
+
 ## 1-3编程练习
 
 ![编程练习](./1-3编程练习/1-3.png)
@@ -103,3 +104,65 @@
             console.log(ele.toArray());
        })
 ```
+
+
+## 1-9 通过关系查找jQuery对象的方法(1)
+
+> 知道一个对象，想要通过它来获取，所以对象的父类，或者子类
+
+> 1. chidren([selector]) 选择一个对象的直接子元素
+```javascript
+    $(function () {
+        // 选择id为box下的所有，div直接子元素，但是，不能选着文本节点
+        var ele = $('#box').children('div')
+        // 与children()方法，效果一样。的类选择器
+        var ele2 =  $('#box > *')
+
+    })
+```
+
+> 2. contents() 选择一个对象的直接子元素，返回文本节点
+```javascript
+    $(function () {
+        // 选择id为box下的所有，div直接子元素，与，所有文本节点
+        var ele = $('#box').contents('div')
+        
+    })
+```
+
+> 3. find(selecor) 通过选择器，来筛选，其中的后代元素（包含子元素，与孙子元素）
+```javascript
+    $(function () {
+        // 选择id为box下的所有，div子元素，与孙子元素，
+        var ele = $('#box').find('div')
+        
+    })
+```
+
+> 4. parent([selecor]) 获取当前匹配元素集合中的每个元素的父元素
+
+> 5. parents([selecor]) 获取当前匹配元素集合中的每个元素的所有父元素
+
+> 6. parentsUntil([selector]) 获取当前匹配元素集合中的每个元素的祖先元素，直到遇到被选择器（该方法的参数）匹配的元素为止
+
+> 7. closest(selecor) 从当前元素开始逐级向上寻找，返回最先匹配的元素，也能获取到它本身。
+```
+    1. closest是从当前元素开始匹配的，parents是从父元素开始匹配的。
+    2. closest向上，找到匹配的就停止；parents会找到所有的父元素，并返回一个集合。
+```
+
+## 1-14 通过关系查找jQuery对象的方法(2)
+
+> 1. next([selector])
+
+> 2. nextAll([selector])
+
+> 3. nextUntil([selector])
+
+> 4. prev([selector])
+
+> 5. prevAll([selector])
+
+> 6. prevUntil([selector])
+
+> 7. siblings([selector])
