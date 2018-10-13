@@ -153,16 +153,34 @@
 
 ## 1-14 通过关系查找jQuery对象的方法(2)
 
-> 1. next([selector])
+> 1. next([selector]) 查找下一个同类级的列表项
+```javascript
+    $(function () {
+        // 找到同类型的下一个元素列表的.item5
+        console.log($('.item4').next('li'))
+    })
+```
 
-> 2. nextAll([selector])
+> 2. nextAll([selector]) 找到同类级的下一个全部元素
+```javascript
+    $(function () {
+        // 找到同类型的下一个元素列表的.item5 ~.itme9
+        console.log($('.item4').nextAll('li'))
+    })
+```
 
-> 3. nextUntil([selector])
+> 3. nextUntil([selector]) 按条件查找，不包括，本身的所有以后的同类级元素
+```javascript
+    $(function () {
+        // 找到同类型的下一个元素列表的.item5 ~.itme6
+        console.log($('.item4').nextUntil('.item7'))
+    })
+```
 
-> 4. prev([selector])
+> 4. prev([selector]) 查找上一个同类级的列表项
 
-> 5. prevAll([selector])
+> 5. prevAll([selector]) 找到同类级的下一个全部元素
 
 > 6. prevUntil([selector])
 
-> 7. siblings([selector])
+> 7. siblings([selector]) 找到一个元素的同类集合，不包含它本身
