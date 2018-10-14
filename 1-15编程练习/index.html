@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="li1">第1个li</li>
+        <li class="li2">第2个li</li>
+        <li class="li3">第3个li</li>
+        <li class="li4">第4个li</li>
+        <li class="li5">第5个li</li>
+        <li class="li6">第6个li</li>
+        <li class="li7">第7个li</li>
+        <li class="li8">第8个li</li>
+        <li class="li9">第9个li</li>
+    </ul>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var li5=$(".li5");
+        //补充代码
+        // 通过nextUntil（）方法获取到第6个li；
+        var li6 = li5.nextUntil('.li7').text('我被改变了')
+        var dom6 = li6.get();
+        console.log(dom6);
+
+        // 通过通过prev（）系列方法获取到第4个li；
+        var li4 = li5.prev('li').text('我也被改变了');  
+        var dom4 = li4.get();
+        console.log(dom4);
+
+
+    </script>
+</body>
+</html>
