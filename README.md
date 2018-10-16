@@ -189,3 +189,82 @@
 
 ![1-15编程练习](./1-15编程练习/1-15.png)
 
+## 1-16 筛选和遍历jQuery对象
+
+### 添加元素
+
+> add(selector)
+```javascript
+    $(function () {
+        // 把item1，与item2 连接
+        console.log($('.item1 , .item2'))
+        // 
+        console.log($('.item1').add('.item2'))   
+    })
+```
+
+### 过滤元素
+
+> not(selector) 删除selector元素
+```javascript
+    $(function () {
+        // 不要item4 元素
+        console.log($('li').not('.item4')) 
+    })
+```
+
+> filter(selector) 保留selector元素
+```javascript
+    $(function () {
+        // 只保留item4元素
+        console.log($('li').filter('.item4')) 
+    })
+```
+
+> not() 与 filter() 的参数还可以是一个函数的返回值
+```javascript
+    $(function () {
+        // 通过函授返回的.item2来保留文件
+        console.log($('li').filter(function(index) {
+            return $(this).hasClass('item2')
+        })) ;
+        console.log($('li').not(function(index) {
+            return $(this).hasClass('item2')
+        })) ;
+    })
+
+```
+
+> has (selector) 保留有特定后代的元素
+```javascript
+    $(function () {
+        // 保留后代有ul元素的选项
+        console.log($('li').has('ul')) 
+    })
+```
+
+### 获取子集 ：类似数组，通过索引的的方式，来获取元素
+
+> slice(start[,end]) 通过开始，和结束的位置来获取元素
+```javascript
+    $(function () {
+        // 获取，[3, 5) 区间的元素
+        console.log($('li').slice(3, 5)) 
+    })
+```
+
+### 转换元素
+
+> map(callback) 将jQuery对象，转换成另一个jQuery对象
+```javascript
+    $(function () {
+        // 
+        console.log($('div').map(function(index, domElement) {
+            return 
+        })) 
+    })
+```
+
+### 遍历元素
+
+> each(iterator) 遍历元素
