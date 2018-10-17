@@ -272,3 +272,19 @@
 ## 1-19 编程练习
 
 ![1-15编程练习](./1-19编程练习/1-19.png)
+
+## 1-20 jQuery对象的其他操作
+
+> is(selector) 
+> is ()方法是根据选择器，元素或jQuery对象来检测匹配元素集合，如果这些元素，中至少有一个元素匹配给定的参数，则返回true
+```javascript
+    $(function(){
+        console.log($('#box3').children().is('p'))
+        // 看看，#box3下的子元素中有没有p标签，有的话返回true，没有就返回false
+    })
+```
+
+> end()
+> end() 方法将匹配元素集还原到破坏性操作（任何对jQuery对象进行改变的操作）之前的操作状态
+
+> addBack([selector]) 与end() 方法相反
